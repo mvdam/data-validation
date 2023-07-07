@@ -1,13 +1,13 @@
 type InputProps = {
   label: string
-  value: string
-  type?: string
+  value?: string
+  type?: 'text' | 'number'
   onChange?: (value: string) => void
 }
 
 export const Input = ({
   label,
-  value,
+  value = '',
   type = 'text',
   onChange,
 }: InputProps) => (
