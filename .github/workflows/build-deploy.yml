@@ -1,4 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
+# Make sure to also define the correct `base: "/<repo-name>/",` in vite.config.ts
 name: Deploy static content to Pages
 
 on:

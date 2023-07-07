@@ -7,3 +7,10 @@ nvm use
 npm install
 npm run dev
 ```
+
+App deployed to Github Pages on https://www.mvdam.dev/data-validation/
+
+### Used tech
+
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [Superstruct](https://github.com/ianstormtaylor/superstruct)
