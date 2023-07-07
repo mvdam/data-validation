@@ -1,8 +1,16 @@
 ### Notes
 
+TODOS:
+
+- check for string normalization support, (NFKC) (https://joi.dev/api/?v=17.9.1)
+- extend pros & cons for every framework
+- article + conclusion
+- rephrase Unicode normalization text - https://withblue.ink/2019/03/11/why-you-need-to-normalize-unicode-strings.html
+- mention https://towardsdatascience.com/what-on-earth-is-unicode-normalization-56c005c55ad0
+
 ---
 
-Superstruct
+Superstruct (977k downloads)
 
 - Does not include logic for checking complex strings such as e-mail addresses, see https://zod.dev/?id=strings
 - Only supports basic JS types by default, rest is opt-in
@@ -10,19 +18,32 @@ Superstruct
 - Relatively lightweight: 160KB
 - Relatively new library
 - Works great with TypeScript, Type Narrowing (Type Guard) works
+- Generates nice error messages by default
 
-Zod
+Zod (4m downloads)
 
 - Much heavier, +600KB
 - Larger community, lots of X-to-Zod libraries
 - Lacks user-friendly Type Narrowing (Type Guard) support
 
-Yup
+Yup (4m downloads)
 
 - Since v1.0 rewrite typesafe
 - Very similar to Superstrict in its API but TypeScript integration is rough
 - Option to have sync or async validations, plugging it into API-calls can be done out-of-the-box
 - Type Narrowing (Type Guard) support could be improved
+
+io-ts (920k downloads)
+
+- "Functional version of Zod", uses functional programming patterns
+- Excellent TypeScript support
+- Works nicely with fp-ts
+
+Joi (7.5m downloads)
+
+- Very popular library
+- Lacks Type Narrowing support, and other Types
+- Offers [Unicode normalization](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize) for improved data sanitization
 
 ### Requirements
 
@@ -32,6 +53,12 @@ Yup
 - First-class TypeScript support
 
 ---
+
+### Important concepts for data-validation and sanitizing
+
+- Unicode normalization
+
+  When dealing with user input this is very important. When not done correctly it can cause unexpected bugs, such as records not found in a database, passwords mismatching letting users unable to authenticate, etc.
 
 ### Why using a library for data validating
 
